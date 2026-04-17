@@ -71,19 +71,19 @@ begin
     estim_proce : process
     begin
 
-        tb_signal_adc   <=  '0' & (30 downto 0 => '1')  ;
-        tb_signal_selector_filter   <= (others => '1')  ;
+        tb_signal_adc               <=  (31 downto 22 => '0') & "11111111111" & (others => '0') ;
+        tb_signal_selector_filter   <=  (others => '1')                                         ;
 
-        wait for 10 ns                                  ;
+        wait for 10 ns                                                                          ;
 
-        tb_signal_selector_filter   <= (others => '0')  ;
+        tb_signal_selector_filter   <=  (others => '0')                                         ;
 
-        wait for 15 ns                                  ;
+        wait for 15 ns                                                                          ;
 
-        tb_signal_adc   <=  (others => '0')             ;
+        tb_signal_adc               <=  (others => '0')                                         ;
 
-        wait                                            ;
+        wait                                                                                    ;
 
 
-    end process;
-end tb_comport;
+    end process ;
+end tb_comport  ;
