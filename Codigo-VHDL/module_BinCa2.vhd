@@ -39,10 +39,10 @@ begin
 	begin
 
 		if(i_Entrada(11)='0') then
-			x <= "11111111111" & i_Entrada(10 downto 0) & "000000000"	;
+			x <= "11111111111" & i_Entrada(10 downto 0) & "0000000000"	;
 
 		else
-			x <= "00000000000" & i_Entrada(10 downto 0) & "000000000"	;
+			x <= "00000000000" & i_Entrada(10 downto 0) & "0000000000"	;
 
 		end if	;
 
