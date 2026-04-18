@@ -24,9 +24,9 @@ entity module_Filtro_Master is
 ------------------------------------------------------------
 	--	Terminales del modulon ADC
 
-		jb8 			: 	in  std_logic 	;
-		jb7 			: 	out std_logic	;
-		jb10			: 	out std_logic	;
+		JB8 			: 	in  std_logic 	;
+		JB7 			: 	out std_logic	;
+		JB10			: 	out std_logic	;
 ------------------------------------------------------------
 	--	Terminales del modulon DAC
 
@@ -70,7 +70,7 @@ component ClockForward is
 	);
 end component;
 
-component clk_wiz_v3_6
+component DivFrecppal
 	Port(
 		-- Clock in ports
   		CLK_IN1			: 	in	std_logic	;
@@ -147,7 +147,7 @@ begin
 	--    -- Clock out ports
 	--    CLK_OUT1           => clkdac);
 
-	DivFrecppal : clk_wiz_v3_6
+	DivFrecppal_1 : DivFrecppal
 		Port map(
 			-- Clock in ports
 		    CLK_IN1			=> clk		,
