@@ -37,9 +37,9 @@ Setup/Hold to clock clk
                |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source         | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ---------------+------------+------------+------------+------------+------------------+--------+
-JB8            |    3.139(R)|      SLOW  |   -1.715(R)|      FAST  |clkdac            |   0.000|
-selec_filter<0>|   32.203(R)|      SLOW  |   -6.076(R)|      FAST  |clkdac            |   0.000|
-selec_filter<1>|   33.113(R)|      SLOW  |   -6.681(R)|      FAST  |clkdac            |   0.000|
+JB8            |    3.122(R)|      SLOW  |   -1.669(R)|      FAST  |clkdac            |   0.000|
+selec_filter<0>|   33.686(R)|      SLOW  |   -6.329(R)|      FAST  |clkdac            |   0.000|
+selec_filter<1>|   34.296(R)|      SLOW  |   -6.623(R)|      FAST  |clkdac            |   0.000|
 ---------------+------------+------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -47,19 +47,19 @@ Clock clk to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-JA7         |         6.728(R)|      SLOW  |         4.176(R)|      FAST  |clkdac            |   0.000|
-JA9         |         6.025(R)|      SLOW  |         3.744(R)|      FAST  |clkdac            |   0.000|
+JA7         |         7.121(R)|      SLOW  |         4.406(R)|      FAST  |clkdac            |   0.000|
+JA9         |         6.701(R)|      SLOW  |         4.180(R)|      FAST  |clkdac            |   0.000|
 JA10        |         4.385(R)|      SLOW  |         2.557(R)|      FAST  |clkdac            |   0.000|
-JB7         |         6.219(R)|      SLOW  |         3.812(R)|      FAST  |clkdac            |   0.000|
+JB7         |         6.406(R)|      SLOW  |         3.956(R)|      FAST  |clkdac            |   0.000|
 JB10        |         4.334(R)|      SLOW  |         2.506(R)|      FAST  |clkdac            |   0.000|
-Led<0>      |         5.637(R)|      SLOW  |         3.422(R)|      FAST  |clkdac            |   0.000|
-Led<1>      |         5.434(R)|      SLOW  |         3.315(R)|      FAST  |clkdac            |   0.000|
-Led<2>      |         5.393(R)|      SLOW  |         3.281(R)|      FAST  |clkdac            |   0.000|
-Led<3>      |         5.405(R)|      SLOW  |         3.288(R)|      FAST  |clkdac            |   0.000|
-Led<4>      |         5.150(R)|      SLOW  |         3.132(R)|      FAST  |clkdac            |   0.000|
-Led<5>      |         5.295(R)|      SLOW  |         3.247(R)|      FAST  |clkdac            |   0.000|
-Led<6>      |         5.062(R)|      SLOW  |         3.095(R)|      FAST  |clkdac            |   0.000|
-Led<7>      |         5.178(R)|      SLOW  |         3.134(R)|      FAST  |clkdac            |   0.000|
+Led<0>      |         5.654(R)|      SLOW  |         3.400(R)|      FAST  |clkdac            |   0.000|
+Led<1>      |         5.222(R)|      SLOW  |         3.179(R)|      FAST  |clkdac            |   0.000|
+Led<2>      |         5.184(R)|      SLOW  |         3.148(R)|      FAST  |clkdac            |   0.000|
+Led<3>      |         5.190(R)|      SLOW  |         3.152(R)|      FAST  |clkdac            |   0.000|
+Led<4>      |         5.179(R)|      SLOW  |         3.154(R)|      FAST  |clkdac            |   0.000|
+Led<5>      |         5.294(R)|      SLOW  |         3.251(R)|      FAST  |clkdac            |   0.000|
+Led<6>      |         5.229(R)|      SLOW  |         3.169(R)|      FAST  |clkdac            |   0.000|
+Led<7>      |         5.238(R)|      SLOW  |         3.263(R)|      FAST  |clkdac            |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -67,18 +67,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.586|         |         |         |
+clk            |    5.469|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Sat Apr 18 21:46:33 2026 
+Analysis completed Sun Apr 19 23:36:32 2026 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 406 MB
+Peak Memory Usage: 408 MB
 
 
 

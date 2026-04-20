@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/ise/ISE-FiltroFIR/FiltroFIR/tb_module_prod_isim_beh.exe" -prj "/home/ise/ISE-FiltroFIR/FiltroFIR/tb_module_prod_beh.prj" "work.tb_module_prod" 

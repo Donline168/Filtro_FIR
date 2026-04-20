@@ -33,10 +33,10 @@ begin
 	begin
 
 		if(i_y(31)	=	'0') then
-			x	<=	"1"	 &	i_y(21 downto 11)	;
+			x	<=	"1"	 &	i_y(20 downto 10)	;
 
 		else
-			x	<=	"0"  &	i_y(21 downto 11)	;
+			x	<=	"0"  &	i_y(20 downto 10)	;
 
 		end if	;
 

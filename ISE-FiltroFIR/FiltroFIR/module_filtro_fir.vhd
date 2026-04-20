@@ -112,22 +112,22 @@ begin
 
 --  HAMMING
 
-    coeb_impulrespon_hamm(0)    <=  "111111111101"  ;
-    coeb_impulrespon_hamm(1)    <=  "111111111101"  ;
-    coeb_impulrespon_hamm(2)    <=  "111111111011"  ;
-    coeb_impulrespon_hamm(3)    <=  "111111111001"  ;
-    coeb_impulrespon_hamm(4)    <=  "111111110111"  ;
-    coeb_impulrespon_hamm(5)    <=  "111111110110"  ;
-    coeb_impulrespon_hamm(6)    <=  "111111111010"  ;
-    coeb_impulrespon_hamm(7)    <=  "000000000100"  ;
-    coeb_impulrespon_hamm(8)    <=  "000000011000"  ;
-    coeb_impulrespon_hamm(9)    <=  "000000110110"  ;
-    coeb_impulrespon_hamm(10)   <=  "000001011100"  ;
-    coeb_impulrespon_hamm(11)   <=  "000010000110"  ;
-    coeb_impulrespon_hamm(12)   <=  "000010110001"  ;
-    coeb_impulrespon_hamm(13)   <=  "000011010101"  ;
-    coeb_impulrespon_hamm(14)   <=  "000011101101"  ;
-    coeb_impulrespon_hamm(15)   <=  "000011110110"  ;
+    coeb_impulrespon_hamm(0)    <=  "111111111110"  ; -- - 0,000997   
+    coeb_impulrespon_hamm(1)    <=  "111111111101"  ; -- - 0,00172
+    coeb_impulrespon_hamm(2)    <=  "111111111011"  ; -- - 0,00287
+    coeb_impulrespon_hamm(3)    <=  "111111111001"  ; -- - 0,00436
+    coeb_impulrespon_hamm(4)    <=  "111111110111"  ; -- - 0,00566
+    coeb_impulrespon_hamm(5)    <=  "111111110110"  ; -- - 0,00579
+    coeb_impulrespon_hamm(6)    <=  "111111111010"  ; -- - 0,00349
+    coeb_impulrespon_hamm(7)    <=  "000000000100"  ; --   0,00245
+    coeb_impulrespon_hamm(8)    <=  "000000011000"  ; --   0,01287
+    coeb_impulrespon_hamm(9)    <=  "000000110110"  ; --   0,02786
+    coeb_impulrespon_hamm(10)   <=  "000001011100"  ; --   0,04658
+    coeb_impulrespon_hamm(11)   <=  "000010000110"  ; --   0,06727
+    coeb_impulrespon_hamm(12)   <=  "000010110001"  ; --   0,08749
+    coeb_impulrespon_hamm(13)   <=  "000011010101"  ; --   0,10453
+    coeb_impulrespon_hamm(14)   <=  "000011101101"  ; --   0,11590
+    coeb_impulrespon_hamm(15)   <=  "000011110110"  ; --   0,12
 
 --  BARLETT
 

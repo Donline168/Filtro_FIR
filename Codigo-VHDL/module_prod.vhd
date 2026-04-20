@@ -30,7 +30,7 @@ begin
 
     result <= i_coe * suma_t;
 
-    o_prod <= resize(result(28 downto 11),32);                                  --  Le devuelvo su tamaño real de 32 bits.
+    o_prod <= resize(result(29 downto 1),32);                                  --  Le devuelvo su tamaño real de 32 bits.
 
 
 end comport_module_prod;

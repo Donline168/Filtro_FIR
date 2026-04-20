@@ -305,8 +305,8 @@ Unit <modulo_sum> synthesized.
 
 Synthesizing Unit <module_Ca2Bin>.
     Related source file is "/home/ise/ISE-FiltroFIR/FiltroFIR/module_Ca2Bin.vhd".
-WARNING:Xst:647 - Input <i_y<10:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <i_y<30:22>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <i_y<9:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <i_y<30:21>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
 	no macro.
 Unit <module_Ca2Bin> synthesized.
@@ -1275,10 +1275,10 @@ Slice Logic Utilization:
     Number used as Logic:               727  out of   9112     7%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1054
-   Number with an unused Flip Flop:     620  out of   1054    58%  
-   Number with an unused LUT:           327  out of   1054    31%  
-   Number of fully used LUT-FF pairs:   107  out of   1054    10%  
+ Number of LUT Flip Flop pairs used:   1016
+   Number with an unused Flip Flop:     582  out of   1016    57%  
+   Number with an unused LUT:           289  out of   1016    28%  
+   Number of fully used LUT-FF pairs:   145  out of   1016    14%  
    Number of unique control sets:         7
 
 IO Utilization: 
@@ -1323,7 +1323,7 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: 1.351ns (Maximum Frequency: 740.439MHz)
-   Minimum input arrival time before clock: 24.716ns
+   Minimum input arrival time before clock: 24.493ns
    Maximum output required time after clock: 3.634ns
    Maximum combinational path delay: No path found
 
@@ -1397,9 +1397,9 @@ Offset:              3.729ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 1813803948673 / 13
+  Total number of paths / destination ports: 1603479587125 / 13
 -------------------------------------------------------------------------
-Offset:              24.716ns (Levels of Logic = 38)
+Offset:              24.493ns (Levels of Logic = 51)
   Source:            selec_filter<1> (PAD)
   Destination:       DAC/datb_11 (FF)
   Destination Clock: clk rising 0.2X
@@ -1408,12 +1408,25 @@ Offset:              24.716ns (Levels of Logic = 38)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            14   1.222   0.958  selec_filter_1_IBUF (selec_filter_1_IBUF)
-     LUT2:I1->O           17   0.205   1.027  Top_Desing_Filter/module_filtro_fir_inst/coeb_impulrespon<11><2>1 (Top_Desing_Filter/module_filtro_fir_inst/coeb_impulrespon<11><2>)
-     DSP48A1:A2->M24      38   2.835   1.481  Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[1].modulo_prod_inst/Mmult_result (Top_Desing_Filter/module_filtro_fir_inst/prod<1><13>)
-     LUT3:I1->O            1   0.203   0.580  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd117 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd113)
-     LUT4:I3->O            1   0.205   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_lut<0>14 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_lut<0>14)
-     MUXCY:S->O            1   0.172   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_13 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>14)
+     IBUF:I->O            14   1.222   0.957  selec_filter_1_IBUF (selec_filter_1_IBUF)
+     INV:I->O             25   0.206   1.192  Top_Desing_Filter/module_filtro_fir_inst/coeb_impulrespon<0><10>1_INV_0 (Top_Desing_Filter/module_filtro_fir_inst/coeb_impulrespon<0><10>)
+     DSP48A1:A10->M1       2   2.835   0.845  Top_Desing_Filter/module_filtro_fir_inst/module_prod_inst/Mmult_result (Top_Desing_Filter/module_filtro_fir_inst/prod<0><0>)
+     LUT3:I0->O            1   0.205   0.580  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1)
+     LUT4:I3->O            1   0.205   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_lut<0>1 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_lut<0>1)
+     MUXCY:S->O            1   0.172   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_0 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>1)
+     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_1 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>2)
+     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_2 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>3)
+     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_3 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>4)
+     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_4 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>5)
+     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_5 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>6)
+     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_6 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>7)
+     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_7 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>8)
+     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_8 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>9)
+     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_9 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>10)
+     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_10 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>11)
+     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_11 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>12)
+     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_12 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>13)
+     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_13 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>14)
      MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_14 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>15)
      MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_15 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>16)
      MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_16 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>17)
@@ -1448,8 +1461,8 @@ Offset:              24.716ns (Levels of Logic = 38)
      LUT6:I1->O            1   0.203   0.000  DAC/Mmux_datb[15]_GND_59_o_mux_8_OUT31 (DAC/datb[15]_GND_59_o_mux_8_OUT<11>)
      FD:D                      0.102          DAC/datb_11
     ----------------------------------------
-    Total                     24.716ns (10.511ns logic, 14.205ns route)
-                                       (42.5% logic, 57.5% route)
+    Total                     24.493ns (10.761ns logic, 13.732ns route)
+                                       (43.9% logic, 56.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -1481,7 +1494,7 @@ Clock to Setup on destination clock clk
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
 clk            |    4.140|         |         |         |
-div2/clkout    |   24.509|         |         |         |
+div2/clkout    |   24.084|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock div2/clkout
@@ -1497,12 +1510,12 @@ div2/clkout    |    1.351|         |         |         |
 
 
 Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 5.62 secs
+Total CPU time to Xst completion: 5.34 secs
  
 --> 
 
 
-Total memory usage is 524808 kilobytes
+Total memory usage is 524996 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  758 (   0 filtered)

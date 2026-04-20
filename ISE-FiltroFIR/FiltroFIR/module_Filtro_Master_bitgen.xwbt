@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/ise/ISE-FiltroFIR/FiltroFIR/module_Filtro_Master.ncd
+OUTFILE=/home/ise/ISE-FiltroFIR/FiltroFIR/module_Filtro_Master.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=/home/ise/ISE-FiltroFIR/FiltroFIR
+LICENSE=WebPack
+USER_INFO=213736890_0_0_111

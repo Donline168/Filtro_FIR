@@ -27,3 +27,9 @@ ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc6slx16-csg3
 map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -detail -ir off -pr off -lc off -power off -o module_Filtro_Master_map.ncd module_Filtro_Master.ngd module_Filtro_Master.pcf 
 par -w -intstyle ise -ol high -mt off module_Filtro_Master_map.ncd module_Filtro_Master.ncd module_Filtro_Master.pcf 
 trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml module_Filtro_Master.twx module_Filtro_Master.ncd -o module_Filtro_Master.twr module_Filtro_Master.pcf 
+xst -intstyle ise -ifn "/home/ise/ISE-FiltroFIR/FiltroFIR/module_Filtro_Master.xst" -ofn "/home/ise/ISE-FiltroFIR/FiltroFIR/module_Filtro_Master.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc6slx16-csg324-3 module_Filtro_Master.ngc module_Filtro_Master.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -detail -ir off -pr off -lc off -power off -o module_Filtro_Master_map.ncd module_Filtro_Master.ngd module_Filtro_Master.pcf 
+par -w -intstyle ise -ol high -mt off module_Filtro_Master_map.ncd module_Filtro_Master.ncd module_Filtro_Master.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml module_Filtro_Master.twx module_Filtro_Master.ncd -o module_Filtro_Master.twr module_Filtro_Master.pcf 
+bitgen -intstyle ise -f module_Filtro_Master.ut module_Filtro_Master.ncd 

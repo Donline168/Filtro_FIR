@@ -9,50 +9,50 @@ end     tb_top_desing		    ;
 
 architecture tb_comport of tb_top_desing is
     
-    constant clk_period : time := 20 ns     ;
+    constant clk_period : time := 2 us     ;
     
     -- Declaración del componente a probar
     component top_desing
+        generic (
+            selector_sample     :   integer := 31     ;                                       -- Ancho de datos por defecto (31 o 29)
+            selector_coe        :   integer := 16                                             -- Elegir entre 16 coeficientes(15 iguales) 
+                                                                                              -- ó 15 coeficientes (14 iguales)
+        );
         Port (
-
-        signal_adc                  :   in  SIGNED              (31 downto 0)   ;   --Señal de muestreo en 12 bits
-        clock                       :   in  std_logic                           ;   --Señal del clock
-        reset                       :   in  SIGNED                              ;
-        signal_selector_filter      :   in  signed              (1 downto 0)    ;                   
-
-        filter_data                 :   out SIGNED              (31 downto 0)       --Señal filtrada de 12 bits al DAC
+            i_signal_adc        :   in  std_logic_vector    (11 downto 0)   ;                 --Señal de muestreo en 12 bits
+            i_clock             :   in  std_logic                           ;                 --Señal del clock
+            i_reset             :   in  std_logic_vector    (0 downto 0 )   ;             
+            i_filter_selec      :   in  std_logic_vector    (1 downto 0 )   ;                      
+            o_signal_filter     :   out std_logic_vector    (11 downto 0)                     --Señal filtrada de 12 bits al DAC
         );
 
     end component;
 
     -- Seales internas para conectar al DUT
     
-    signal    tb_signal_adc                 :   SIGNED          (31 downto 0)   :=  (others => '0') ; --Señal de muestreo en 12 bits
-    signal    tb_clock                      :   std_logic                       :=  '0'             ; --Señal del clock
-    signal    tb_reset                      :   signed          (0 downto 0 )   :=  (others => '0') ;
-    signal    tb_signal_selector_filter     :   signed          (1 downto 0 )   :=  (others => '0') ;                   
-    signal    tb_filter_data                :   SIGNED          (31 downto 0)   :=  (others => '0') ; --Señal filtrada de 12 bits al DAC
+    signal    tb_signal_adc     :   std_logic_vector    (11 downto 0)   :=  (others => '0') ; --Señal de muestreo en 12 bits
+    signal    tb_clock          :   std_logic                           :=  '0'             ; --Señal del clock
+    signal    tb_reset          :   std_logic_vector    (0 downto 0 )   :=  (others => '0') ;
+    signal    tb_filter_selec   :   std_logic_vector    (1 downto 0 )   :=  (others => '0') ;                   
+    signal    tb_signal_filter  :   std_logic_vector    (11 downto 0)   :=  (others => '0') ; --Señal filtrada de 12 bits al DAC
 
 
 begin
 
     top_desing_inst : top_desing
      port map(
-        signal_adc              =>      tb_signal_adc               ,
-        clock                   =>      tb_clock                    ,
-        reset                   =>      tb_reset                    ,
-        signal_selector_filter  =>      tb_signal_selector_filter   ,
-        filter_data             =>      tb_filter_data
+        i_signal_adc    =>  tb_signal_adc   ,
+        i_clock         =>  tb_clock        ,
+        i_reset         =>  tb_reset        ,
+        i_filter_selec  =>  tb_filter_selec ,
+        o_signal_filter =>  tb_signal_filter
     );
     
     inicial_var : process
     begin
-        --tb_clock                    <=      '0'         ;
-        tb_reset                    <=      "1"         ;
-        --tb_signal_selector_filter   <= (others => '0')  ;
-        
-        wait for 10 ns;
-        tb_reset                    <=      "0"         ;
+        tb_reset        <=      "1"         ;
+        wait for 0.5 us;
+        tb_reset        <=      "0"         ;
         wait;
 
     end process;
@@ -60,10 +60,10 @@ begin
     estim_clock : process
     begin
 
-        tb_clock                    <= '0'  ;
+        tb_clock        <= '0'  ;
 		wait for clk_period / 2             ;
 
-        tb_clock                    <= '1'  ;
+        tb_clock        <= '1'  ;
         wait for clk_period / 2             ;
 
     end process;
@@ -71,18 +71,13 @@ begin
     estim_proce : process
     begin
 
-        tb_signal_adc               <=  (31 downto 22 => '0') & "11111111111" & (others => '0') ;
-        tb_signal_selector_filter   <=  (others => '1')                                         ;
-
-        wait for 10 ns                                                                          ;
-
-        tb_signal_selector_filter   <=  (others => '0')                                         ;
-
-        wait for 15 ns                                                                          ;
-
-        tb_signal_adc               <=  (others => '0')                                         ;
-
-        wait                                                                                    ;
+        tb_signal_adc   <=  "111111111111"  ;
+        tb_filter_selec <=  (others => '1') ;
+        wait for 0.5 us                      ;
+        tb_filter_selec <=  (others => '0') ;
+        wait for 2 us                      ;
+        tb_signal_adc   <=  "011111111111" ;
+        wait                                ;
 
 
     end process ;

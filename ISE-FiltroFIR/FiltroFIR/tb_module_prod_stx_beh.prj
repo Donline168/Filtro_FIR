@@ -1,0 +1,2 @@
+vhdl isim_temp "module_prod.vhd"
+vhdl isim_temp "tb_module_prod.vhd"

@@ -1,0 +1,7 @@
+vhdl isim_temp "modulo_sum.vhd"
+vhdl isim_temp "module_prod.vhd"
+vhdl isim_temp "module_filtro_fir.vhd"
+vhdl isim_temp "module_Ca2Bin.vhd"
+vhdl isim_temp "module_BinCa2.vhd"
+vhdl isim_temp "top_desing.vhd"
+vhdl isim_temp "tb_top_desing.vhd"
