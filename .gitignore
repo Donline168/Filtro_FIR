@@ -1,3 +1,6 @@
 # Listado de elementos que se omitiran en el repositorio
 *.png
 *.txt
+/ISE-FiltroFirAlter
+
+

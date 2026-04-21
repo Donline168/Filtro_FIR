@@ -11,8 +11,8 @@ library IEEE	;
 use IEEE.STD_LOGIC_1164.ALL	;
 
 ------------------------------------------------------------
- library UNISIM;
- use UNISIM.VComponents.all;
+library UNISIM;
+use UNISIM.VComponents.all;
 ------------------------------------------------------------
 -- Definicion de las entradas
 

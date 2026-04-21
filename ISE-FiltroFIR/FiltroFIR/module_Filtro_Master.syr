@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Reading design: module_Filtro_Master.prj
@@ -174,7 +174,7 @@ WARNING:HDLCompiler:92 - "/home/ise/ISE-FiltroFIR/FiltroFIR/module_filtro_fir.vh
 Elaborating entity <module_prod> (architecture <comport_module_prod>) from library <work>.
 
 Elaborating entity <modulo_sum> (architecture <comport_modulo_sum>) from library <work>.
-WARNING:HDLCompiler:1127 - "/home/ise/ISE-FiltroFIR/FiltroFIR/module_filtro_fir.vhd" Line 264: Assignment to recuperacion ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/ISE-FiltroFIR/FiltroFIR/module_filtro_fir.vhd" Line 293: Assignment to recuperacion ignored, since the identifier is never used
 
 Elaborating entity <module_Ca2Bin> (architecture <comport_module_Ca2Bin>) from library <work>.
 
@@ -1509,13 +1509,13 @@ div2/clkout    |    1.351|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 5.34 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 7.35 secs
  
 --> 
 
 
-Total memory usage is 524996 kilobytes
+Total memory usage is 525000 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  758 (   0 filtered)

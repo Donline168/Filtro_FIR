@@ -174,6 +174,16 @@ begin
  
     end process;
 
+    -- iter_coe : for i_b in 0 to i_coe_selec-1 generate
+
+  
+    --                 coeb_impulrespon(i_coe_selec - 1 - i_b) <= coeb_impulrespon_rect(15 - i_b)  ;
+
+
+    -- end generate; 
+
+
+
 -------------------------------------------------------------------------
 --  Proceso de Desplazamiento de los registros con el clock
 
@@ -202,6 +212,25 @@ begin
         end if;
 
     end process;
+--    process (i_clock)
+    
+--     begin
+--             if (rising_edge(i_clock))then
+
+--                 for i in 0 to i_sample_selec-1 loop
+                
+--                     if i = 0 then
+--                         delay(i) <= i_signal_data   ;
+--                     else
+--                         delay(i) <= delay(i-1)      ;
+
+--                     end if;
+
+--                 end loop;
+
+--             end if;
+
+--     end process;
 
 -------------------------------------------------------------------------
  -- Generador de los modulos productos
@@ -258,7 +287,7 @@ begin
     end generate;
 
 -------------------------------------------------------------------------
---  Salida de la seÃ±al final filtrada con 49 bits
+--  Salida de la señal final filtrada con 49 bits
 
     o_signal_operation <= suma(i_coe_selec-2)               ;
     recuperacion       <= suma(i_coe_selec-2)(31 downto 20) ;

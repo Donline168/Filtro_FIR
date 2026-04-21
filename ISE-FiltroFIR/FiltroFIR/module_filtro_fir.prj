@@ -1,0 +1,3 @@
+vhdl work "modulo_sum.vhd"
+vhdl work "module_prod.vhd"
+vhdl work "module_filtro_fir.vhd"

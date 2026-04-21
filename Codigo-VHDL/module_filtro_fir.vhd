@@ -151,37 +151,70 @@ begin
 -------------------------------------------------------------------------
 --  Seleccion de Coeficientes mediente la señal i_filter_selec
 
-    process (i_filter_selec)
-    begin
+    -- process (i_filter_selec)
+    -- begin
 
-       for i_b in 0 to i_coe_selec-1 loop
+    --    for i_b in 0 to i_coe_selec-1 loop
 
-                if i_filter_selec = 00 then
+    --             if i_filter_selec = 00 then
 
+    --                 coeb_impulrespon(i_coe_selec - 1 - i_b) <= coeb_impulrespon_rect(15 - i_b)  ;
+
+    --             elsif i_filter_selec = 01 then 
+
+    --                 coeb_impulrespon(i_coe_selec - 1 - i_b) <= coeb_impulrespon_hamm(15 - i_b)  ;
+
+    --             else
+
+    --                 coeb_impulrespon(i_coe_selec - 1 - i_b) <= coeb_impulrespon_barl(15 - i_b)  ;
+
+    --             end if;
+
+    --         end loop; 
+ 
+    -- end process;
+
+    iter_coe : for i_b in 0 to i_coe_selec-1 generate
+
+  
                     coeb_impulrespon(i_coe_selec - 1 - i_b) <= coeb_impulrespon_rect(15 - i_b)  ;
 
-                elsif i_filter_selec = 01 then 
 
-                    coeb_impulrespon(i_coe_selec - 1 - i_b) <= coeb_impulrespon_hamm(15 - i_b)  ;
+    end generate; 
 
-                else
 
-                    coeb_impulrespon(i_coe_selec - 1 - i_b) <= coeb_impulrespon_barl(15 - i_b)  ;
-
-                end if;
-
-            end loop; 
- 
-    end process;
 
 -------------------------------------------------------------------------
 --  Proceso de Desplazamiento de los registros con el clock
 
-    process (i_reset,i_clock)
+    -- process (i_reset,i_clock)
+    
+    -- begin
+
+    --     if (i_reset = 0) then
+    --         if (rising_edge(i_clock))then
+
+    --             for i in 0 to i_sample_selec-1 loop
+                
+    --                 if i = 0 then
+    --                     delay(i) <= i_signal_data   ;
+    --                 else
+    --                     delay(i) <= delay(i-1)      ;
+
+    --                 end if;
+
+    --             end loop;
+
+    --         end if;
+    --     else
+    --         delay   <=  (others => (others => '0')) ; 
+
+    --     end if;
+
+    -- end process;
+   process (i_clock)
     
     begin
-
-        if (i_reset = 0) then
             if (rising_edge(i_clock))then
 
                 for i in 0 to i_sample_selec-1 loop
@@ -196,10 +229,6 @@ begin
                 end loop;
 
             end if;
-        else
-            delay   <=  (others => (others => '0')) ; 
-
-        end if;
 
     end process;
 

@@ -1,4 +1,26 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sun Apr 19 23:36:16 2026
+// Written by: Map P.20131013 on Tue Apr 21 15:19:29 2026
 //! **************************************************************************
+
+SCHEMATIC START;
+COMP "JA7" LOCATE = SITE "M10" LEVEL 1;
+COMP "JA8" LOCATE = SITE "N9" LEVEL 1;
+COMP "JA9" LOCATE = SITE "U11" LEVEL 1;
+COMP "JB7" LOCATE = SITE "J3" LEVEL 1;
+COMP "JB8" LOCATE = SITE "J1" LEVEL 1;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "JA10" LOCATE = SITE "V11" LEVEL 1;
+COMP "JB10" LOCATE = SITE "K5" LEVEL 1;
+COMP "selec_filter<0>" LOCATE = SITE "T9" LEVEL 1;
+COMP "selec_filter<1>" LOCATE = SITE "V9" LEVEL 1;
+COMP "Led<0>" LOCATE = SITE "U16" LEVEL 1;
+COMP "Led<1>" LOCATE = SITE "V16" LEVEL 1;
+COMP "Led<2>" LOCATE = SITE "U15" LEVEL 1;
+COMP "Led<3>" LOCATE = SITE "V15" LEVEL 1;
+COMP "Led<4>" LOCATE = SITE "M11" LEVEL 1;
+COMP "Led<5>" LOCATE = SITE "N11" LEVEL 1;
+COMP "Led<6>" LOCATE = SITE "R11" LEVEL 1;
+COMP "Led<7>" LOCATE = SITE "T11" LEVEL 1;
+COMP "reset<0>" LOCATE = SITE "T10" LEVEL 1;
+SCHEMATIC END;
 

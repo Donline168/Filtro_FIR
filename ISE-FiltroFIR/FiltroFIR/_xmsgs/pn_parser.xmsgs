@@ -8,7 +8,22 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/ise/ISE-FiltroFIR/FiltroFIR/ClockForward.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/ise/ISE-FiltroFIR/FiltroFIR/DivFrec.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/ise/ISE-FiltroFIR/FiltroFIR/module_ADC_ctrl.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/ise/ISE-FiltroFIR/FiltroFIR/module_BinCa2.vhd&quot; into library work</arg>
+</msg>
+
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/ise/ISE-FiltroFIR/FiltroFIR/module_Ca2Bin.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/ise/ISE-FiltroFIR/FiltroFIR/module_DAC_ctrl.vhd&quot; into library work</arg>
 </msg>
 
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/ise/ISE-FiltroFIR/FiltroFIR/module_Filtro_master.vhd&quot; into library work</arg>
@@ -20,10 +35,7 @@
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/ise/ISE-FiltroFIR/FiltroFIR/module_prod.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/ise/ISE-FiltroFIR/FiltroFIR/tb_module_prod.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/ise/ISE-FiltroFIR/FiltroFIR/tb_top_desing.vhd&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/ise/ISE-FiltroFIR/FiltroFIR/modulo_sum.vhd&quot; into library work</arg>
 </msg>
 
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/ise/ISE-FiltroFIR/FiltroFIR/top_desing.vhd&quot; into library work</arg>

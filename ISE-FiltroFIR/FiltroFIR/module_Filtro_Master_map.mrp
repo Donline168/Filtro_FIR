@@ -11,7 +11,7 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Sun Apr 19 23:36:09 2026
+Mapped Date    : Tue Apr 21 15:19:21 2026
 
 Design Summary
 --------------
@@ -38,10 +38,10 @@ Slice Logic Utilization:
 Slice Logic Distribution:
   Number of occupied Slices:                   197 out of   2,278    8%
   Number of MUXCYs used:                       496 out of   4,556   10%
-  Number of LUT Flip Flop pairs used:          701
-    Number with an unused Flip Flop:           256 out of     701   36%
-    Number with an unused LUT:                  20 out of     701    2%
-    Number of fully used LUT-FF pairs:         425 out of     701   60%
+  Number of LUT Flip Flop pairs used:          705
+    Number with an unused Flip Flop:           260 out of     705   36%
+    Number with an unused LUT:                  24 out of     705    3%
+    Number of fully used LUT-FF pairs:         421 out of     705   59%
     Number of unique control sets:               7
     Number of slice register sites lost
       to control set restrictions:              24 out of  18,224    1%
@@ -54,6 +54,7 @@ Slice Logic Distribution:
 
 IO Utilization:
   Number of bonded IOBs:                        19 out of     232    8%
+    Number of LOCed IOBs:                       19 out of      19  100%
     IOB Flip Flops:                              2
 
 Specific Feature Utilization:
@@ -91,9 +92,9 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                1.97
 
-Peak Memory Usage:  776 MB
-Total REAL time to MAP completion:  7 secs 
-Total CPU time to MAP completion:   6 secs 
+Peak Memory Usage:  778 MB
+Total REAL time to MAP completion:  8 secs 
+Total CPU time to MAP completion:   8 secs 
 
 Table of Contents
 -----------------
@@ -191,25 +192,25 @@ Section 6 - IOB Properties
 | IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| JA7                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| JA8                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| JA9                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| JA10                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | ODDR         |          |          |
-| JB7                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| JB8                                | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
-| JB10                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | ODDR         |          |          |
-| Led<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Led<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Led<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Led<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Led<4>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Led<5>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Led<6>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Led<7>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| clk                                | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
-| reset<0>                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
-| selec_filter<0>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
-| selec_filter<1>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| JA7                                | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| JA8                                | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| JA9                                | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| JA10                               | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW | ODDR         |          |          |
+| JB7                                | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| JB8                                | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| JB10                               | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW | ODDR         |          |          |
+| Led<0>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| Led<1>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| Led<2>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| Led<3>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| Led<4>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| Led<5>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| Led<6>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| Led<7>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| clk                                | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| reset<0>                           | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| selec_filter<0>                    | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| selec_filter<1>                    | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Section 7 - RPMs
