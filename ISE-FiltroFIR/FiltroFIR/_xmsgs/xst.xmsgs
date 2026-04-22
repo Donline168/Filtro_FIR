@@ -5,18 +5,6 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/ISE-FiltroFIR/FiltroFIR/module_filtro_fir.vhd" Line 161: <arg fmt="%s" index="1">coeb_impulrespon_rect</arg> should be on the sensitivity list of the process
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/ISE-FiltroFIR/FiltroFIR/module_filtro_fir.vhd" Line 165: <arg fmt="%s" index="1">coeb_impulrespon_hamm</arg> should be on the sensitivity list of the process
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/ISE-FiltroFIR/FiltroFIR/module_filtro_fir.vhd" Line 169: <arg fmt="%s" index="1">coeb_impulrespon_barl</arg> should be on the sensitivity list of the process
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/ise/ISE-FiltroFIR/FiltroFIR/module_filtro_fir.vhd" Line 293: Assignment to <arg fmt="%s" index="1">recuperacion</arg> ignored, since the identifier is never used
-</msg>
-
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">i_y&lt;9:0&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
@@ -2328,6 +2316,42 @@
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">delay_30_21</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">module_filtro_fir</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">6 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;delay_30_22&gt; &lt;delay_30_23&gt; &lt;delay_30_24&gt; &lt;delay_30_25&gt; &lt;delay_30_26&gt; &lt;delay_30_27&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">delay_30_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_filtro_fir</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">delay_30_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_filtro_fir</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">delay_30_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_filtro_fir</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">delay_30_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_filtro_fir</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">delay_30_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_filtro_fir</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">delay_30_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_filtro_fir</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">delay_30_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_filtro_fir</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">delay_30_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_filtro_fir</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">delay_30_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_filtro_fir</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">delay_30_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_filtro_fir</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">delay_30_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_filtro_fir</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">delay_30_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">module_filtro_fir</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">data_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">module_DAC_ctrl</arg>&gt;. This FF/Latch will be trimmed during the optimization process.

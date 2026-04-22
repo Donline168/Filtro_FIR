@@ -37,7 +37,7 @@ entity module_Filtro_Master is
 ------------------------------------------------------------
 	--	Terminales del Modulo Top_Desing
 
-		selec_filter	:	in	std_logic_vector(1 downto 0)	;
+		-- selec_filter	:	in	std_logic_vector(1 downto 0)	;
 ------------------------------------------------------------
 		Led 			:  	out std_logic_vector(7 downto 0)
 
@@ -120,7 +120,7 @@ component top_desing is
         i_signal_adc  	:	in  std_logic_vector	(11 downto 0)   ; 	-- Señal de muestreo en 12 bits
         i_clock       	:	in  std_logic                           ; 	-- Señal del clock
         i_reset       	:	in  std_logic_vector	(0  downto 0)	;
-        i_filter_selec	:	in  std_logic_vector    (1  downto 0)   ;                   
+        -- i_filter_selec	:	in  std_logic_vector    (1  downto 0)   ;                   
 
         o_signal_filter :   out std_logic_vector    (11 downto 0)    	-- Señal filtrada de 12 bits al DAC  
     );
@@ -182,7 +182,7 @@ begin
     	    i_signal_adc   	=> Entrada,   								-- Señal de muestreo en 12 bits
     	    i_clock        	=> clks,   									-- Señal del clock
     	    i_reset        	=> reset,
-    	    i_filter_selec 	=> selec_filter,                   
+    	    -- i_filter_selec 	=> selec_filter,                   
 
     	    o_signal_filter => Salida    								-- Señal filtrada de 12 bits al DAC  
     );

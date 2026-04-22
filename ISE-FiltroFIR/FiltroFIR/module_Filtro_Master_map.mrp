@@ -11,40 +11,40 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Tue Apr 21 15:19:21 2026
+Mapped Date    : Wed Apr 22 00:10:51 2026
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    0
 Slice Logic Utilization:
-  Number of Slice Registers:                   635 out of  18,224    3%
-    Number used as Flip Flops:                 432
+  Number of Slice Registers:                   623 out of  18,224    3%
+    Number used as Flip Flops:                 420
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:              203
-  Number of Slice LUTs:                        681 out of   9,112    7%
-    Number used as logic:                      498 out of   9,112    5%
-      Number using O6 output only:             277
-      Number using O5 output only:               0
-      Number using O5 and O6:                  221
+  Number of Slice LUTs:                        733 out of   9,112    8%
+    Number used as logic:                      589 out of   9,112    6%
+      Number using O6 output only:             332
+      Number using O5 output only:               3
+      Number using O5 and O6:                  254
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   2,176    0%
-    Number used exclusively as route-thrus:    183
-      Number with same-slice register load:    183
+    Number used exclusively as route-thrus:    144
+      Number with same-slice register load:    144
       Number with same-slice carry load:         0
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   197 out of   2,278    8%
-  Number of MUXCYs used:                       496 out of   4,556   10%
-  Number of LUT Flip Flop pairs used:          705
-    Number with an unused Flip Flop:           260 out of     705   36%
-    Number with an unused LUT:                  24 out of     705    3%
-    Number of fully used LUT-FF pairs:         421 out of     705   59%
+  Number of occupied Slices:                   224 out of   2,278    9%
+  Number of MUXCYs used:                       584 out of   4,556   12%
+  Number of LUT Flip Flop pairs used:          800
+    Number with an unused Flip Flop:           326 out of     800   40%
+    Number with an unused LUT:                  67 out of     800    8%
+    Number of fully used LUT-FF pairs:         407 out of     800   50%
     Number of unique control sets:               7
     Number of slice register sites lost
-      to control set restrictions:              24 out of  18,224    1%
+      to control set restrictions:              20 out of  18,224    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -53,8 +53,8 @@ Slice Logic Distribution:
   over-mapped for a non-slice resource or if Placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        19 out of     232    8%
-    Number of LOCed IOBs:                       19 out of      19  100%
+  Number of bonded IOBs:                        17 out of     232    7%
+    Number of LOCed IOBs:                       17 out of      17  100%
     IOB Flip Flops:                              2
 
 Specific Feature Utilization:
@@ -81,7 +81,7 @@ Specific Feature Utilization:
   Number of BUFHs:                               0 out of     128    0%
   Number of BUFPLLs:                             0 out of       8    0%
   Number of BUFPLL_MCBs:                         0 out of       4    0%
-  Number of DSP48A1s:                           16 out of      32   50%
+  Number of DSP48A1s:                           11 out of      32   34%
   Number of ICAPs:                               0 out of       1    0%
   Number of MCBs:                                0 out of       2    0%
   Number of PCILOGICSEs:                         0 out of       2    0%
@@ -90,11 +90,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                1.97
+Average Fanout of Non-Clock Nets:                2.07
 
-Peak Memory Usage:  778 MB
-Total REAL time to MAP completion:  8 secs 
-Total CPU time to MAP completion:   8 secs 
+Peak Memory Usage:  777 MB
+Total REAL time to MAP completion:  5 secs 
+Total CPU time to MAP completion:   5 secs 
 
 Table of Contents
 -----------------
@@ -139,7 +139,7 @@ Section 4 - Removed Logic Summary
 ---------------------------------
    7 block(s) removed
    2 block(s) optimized away
-   1 Block(s) redundant
+   4 Block(s) redundant
 
 Section 5 - Removed Logic
 -------------------------
@@ -183,6 +183,15 @@ VCC 		XST_VCC
 
 Redundant Block(s):
 TYPE 		BLOCK
+LUT1
+		Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[7].modulo_prod_inst/
+Mmult_result_Madd_cy<17>_rt
+LUT1
+		Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[7].modulo_prod_inst/
+Mmult_result_Madd_cy<16>_rt
+LUT1
+		Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[7].modulo_prod_inst/
+Mmult_result_Madd_cy<1>_rt
 INV 		clkForward1/clk_in_n1_INV_0
 
 Section 6 - IOB Properties
@@ -209,8 +218,6 @@ Section 6 - IOB Properties
 | Led<7>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | clk                                | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
 | reset<0>                           | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
-| selec_filter<0>                    | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
-| selec_filter<1>                    | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Section 7 - RPMs
@@ -282,7 +289,7 @@ Section 12 - Control Set Information
 | clkdac           | ADC/i_ini_ini_ant_AND_1_o |            | DAC/_n0101_inv | 1                | 5              |
 | clkdac           | div2/_n0021               |            |                | 1                | 6              |
 +----------------------------------------------------------------------------------------------------------------+
-| div2/clkout_BUFG | reset_0_IBUF              |            |                | 48               | 372            |
+| div2/clkout_BUFG | reset_0_IBUF              |            |                | 55               | 360            |
 +----------------------------------------------------------------------------------------------------------------+
 
 Section 13 - Utilization by Hierarchy
@@ -290,28 +297,27 @@ Section 13 - Utilization by Hierarchy
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Module                                   | Partition | Slices*       | Slice Reg     | LUTs          | LUTRAM        | BRAM/FIFO | DSP48A1 | BUFG  | BUFIO | BUFR  | DCM   | PLL_ADV   | Full Hierarchical Name                                                                               |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| module_Filtro_Master/                    |           | 1/202         | 0/432         | 2/681         | 0/0           | 0/0       | 0/16    | 0/3   | 0/0   | 0/0   | 0/1   | 0/0       | module_Filtro_Master                                                                                 |
-| +ADC                                     |           | 8/8           | 31/31         | 12/12         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/ADC                                                                             |
-| +DAC                                     |           | 7/7           | 22/22         | 22/22         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/DAC                                                                             |
+| module_Filtro_Master/                    |           | 1/237         | 0/420         | 2/733         | 0/0           | 0/0       | 0/11    | 0/3   | 0/0   | 0/0   | 0/1   | 0/0       | module_Filtro_Master                                                                                 |
+| +ADC                                     |           | 9/9           | 31/31         | 13/13         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/ADC                                                                             |
+| +DAC                                     |           | 8/8           | 22/22         | 22/22         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/DAC                                                                             |
 | +DivFrecppal_1                           |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 2/2   | 0/0   | 0/0   | 1/1   | 0/0       | module_Filtro_Master/DivFrecppal_1                                                                   |
-| +Top_Desing_Filter                       |           | 0/183         | 0/372         | 0/641         | 0/0           | 0/0       | 0/16    | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter                                                               |
+| +Top_Desing_Filter                       |           | 0/216         | 0/360         | 0/692         | 0/0           | 0/0       | 0/11    | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter                                                               |
 | ++module_BinCa2_inst                     |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_BinCa2_inst                                            |
-| ++module_filtro_fir_inst                 |           | 122/182       | 372/372       | 445/640       | 0/0           | 0/0       | 0/16    | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst                                        |
+| ++module_filtro_fir_inst                 |           | 126/215       | 360/360       | 403/691       | 0/0           | 0/0       | 0/11    | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst                                        |
 | +++iter_module_prod[10].modulo_prod_inst |           | 4/4           | 0/0           | 13/13         | 0/0           | 0/0       | 1/1     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[10].modulo_prod_inst  |
 | +++iter_module_prod[11].modulo_prod_inst |           | 4/4           | 0/0           | 13/13         | 0/0           | 0/0       | 1/1     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[11].modulo_prod_inst  |
 | +++iter_module_prod[12].modulo_prod_inst |           | 4/4           | 0/0           | 13/13         | 0/0           | 0/0       | 1/1     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[12].modulo_prod_inst  |
 | +++iter_module_prod[13].modulo_prod_inst |           | 4/4           | 0/0           | 13/13         | 0/0           | 0/0       | 1/1     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[13].modulo_prod_inst  |
 | +++iter_module_prod[14].modulo_prod_inst |           | 4/4           | 0/0           | 13/13         | 0/0           | 0/0       | 1/1     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[14].modulo_prod_inst  |
-| +++iter_module_prod[1].modulo_prod_inst  |           | 4/4           | 0/0           | 13/13         | 0/0           | 0/0       | 1/1     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[1].modulo_prod_inst   |
-| +++iter_module_prod[2].modulo_prod_inst  |           | 4/4           | 0/0           | 13/13         | 0/0           | 0/0       | 1/1     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[2].modulo_prod_inst   |
+| +++iter_module_prod[1].modulo_prod_inst  |           | 11/11         | 0/0           | 34/34         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[1].modulo_prod_inst   |
+| +++iter_module_prod[2].modulo_prod_inst  |           | 11/11         | 0/0           | 35/35         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[2].modulo_prod_inst   |
 | +++iter_module_prod[3].modulo_prod_inst  |           | 4/4           | 0/0           | 13/13         | 0/0           | 0/0       | 1/1     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[3].modulo_prod_inst   |
 | +++iter_module_prod[4].modulo_prod_inst  |           | 4/4           | 0/0           | 13/13         | 0/0           | 0/0       | 1/1     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[4].modulo_prod_inst   |
 | +++iter_module_prod[5].modulo_prod_inst  |           | 4/4           | 0/0           | 13/13         | 0/0           | 0/0       | 1/1     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[5].modulo_prod_inst   |
-| +++iter_module_prod[6].modulo_prod_inst  |           | 4/4           | 0/0           | 13/13         | 0/0           | 0/0       | 1/1     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[6].modulo_prod_inst   |
-| +++iter_module_prod[7].modulo_prod_inst  |           | 4/4           | 0/0           | 13/13         | 0/0           | 0/0       | 1/1     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[7].modulo_prod_inst   |
+| +++iter_module_prod[6].modulo_prod_inst  |           | 12/12         | 0/0           | 35/35         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[6].modulo_prod_inst   |
+| +++iter_module_prod[7].modulo_prod_inst  |           | 15/15         | 0/0           | 54/54         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[7].modulo_prod_inst   |
 | +++iter_module_prod[8].modulo_prod_inst  |           | 4/4           | 0/0           | 13/13         | 0/0           | 0/0       | 1/1     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[8].modulo_prod_inst   |
 | +++iter_module_prod[9].modulo_prod_inst  |           | 4/4           | 0/0           | 13/13         | 0/0           | 0/0       | 1/1     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/iter_module_prod[9].modulo_prod_inst   |
-| +++module_prod_inst                      |           | 4/4           | 0/0           | 13/13         | 0/0           | 0/0       | 1/1     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/module_prod_inst                       |
 | +++modulo_prod_inst                      |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/0       | 1/1     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/Top_Desing_Filter/module_filtro_fir_inst/modulo_prod_inst                       |
 | +clkForward1                             |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/clkForward1                                                                     |
 | +clkForward2                             |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | module_Filtro_Master/clkForward2                                                                     |

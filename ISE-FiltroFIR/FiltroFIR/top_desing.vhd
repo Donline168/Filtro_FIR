@@ -32,7 +32,7 @@ entity top_desing is
         i_signal_adc        :   in  std_logic_vector  (11 downto 0)   ;         -- Señal de muestreo en 12 bits
         i_clock             :   in  std_logic                         ;         -- Señal del clock
         i_reset             :   in  std_logic_vector  (0  downto 0)   ;
-        i_filter_selec      :   in  std_logic_vector  (1  downto 0)   ;         
+        -- i_filter_selec      :   in  std_logic_vector  (1  downto 0)   ;         
         
         o_signal_filter     :   out std_logic_vector  (11 downto 0)             -- Señal filtrada de 12 bits al DAC  
     );
@@ -78,7 +78,7 @@ component module_filtro_fir is
         i_signal_data       :   in  signed      (31 downto 0)   ;               -- Señal del ADC al filtro
         i_clock             :   in  std_logic                           ;           -- Señal del clock
         i_reset             :   in  signed      (0  downto 0)   ;
-        i_filter_selec      :   in  signed      (1  downto 0)   ;
+        -- i_filter_selec      :   in  signed      (1  downto 0)   ;
         
         o_signal_operation  :   out signed      (31 downto 0)                   -- Señal salida del filtro de 32 bits
         );
@@ -98,7 +98,7 @@ end component;
 
 begin
 
-    filter_selec    <= signed  (i_filter_selec )        ;
+    -- filter_selec    <= signed  (i_filter_selec )        ;
     signal_adc      <= signed  (i_signal_adc   )        ;
 
     module_BinCa2_inst: module_BinCa2
@@ -121,7 +121,7 @@ begin
 
             i_clock             =>  i_clock                 ,
             i_reset             =>  reset                   ,
-            i_filter_selec      =>  filter_selec            ,
+            -- i_filter_selec      =>  filter_selec            ,
 
             o_signal_operation  =>  ca2bin
         );

@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Reading design: module_Filtro_Master.prj
@@ -167,14 +167,10 @@ Elaborating entity <top_desing> (architecture <Comportamient_top>) with generics
 Elaborating entity <module_BinCa2> (architecture <comport_module_BinCa2>) from library <work>.
 
 Elaborating entity <module_filtro_fir> (architecture <Comportamient_fir>) with generics from library <work>.
-WARNING:HDLCompiler:92 - "/home/ise/ISE-FiltroFIR/FiltroFIR/module_filtro_fir.vhd" Line 161: coeb_impulrespon_rect should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/ise/ISE-FiltroFIR/FiltroFIR/module_filtro_fir.vhd" Line 165: coeb_impulrespon_hamm should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/ise/ISE-FiltroFIR/FiltroFIR/module_filtro_fir.vhd" Line 169: coeb_impulrespon_barl should be on the sensitivity list of the process
 
 Elaborating entity <module_prod> (architecture <comport_module_prod>) from library <work>.
 
 Elaborating entity <modulo_sum> (architecture <comport_modulo_sum>) from library <work>.
-WARNING:HDLCompiler:1127 - "/home/ise/ISE-FiltroFIR/FiltroFIR/module_filtro_fir.vhd" Line 293: Assignment to recuperacion ignored, since the identifier is never used
 
 Elaborating entity <module_Ca2Bin> (architecture <comport_module_Ca2Bin>) from library <work>.
 
@@ -284,7 +280,6 @@ Synthesizing Unit <module_filtro_fir>.
     Found 32-bit register for signal <delay<30>>.
     Summary:
 	inferred 992 D-type flip-flop(s).
-	inferred  13 Multiplexer(s).
 Unit <module_filtro_fir> synthesized.
 
 Synthesizing Unit <module_prod>.
@@ -348,9 +343,8 @@ Macro Statistics
  5-bit comparator greater                              : 3
  6-bit comparator greater                              : 1
  6-bit comparator lessequal                            : 1
-# Multiplexers                                         : 75
+# Multiplexers                                         : 62
  1-bit 2-to-1 multiplexer                              : 61
- 12-bit 2-to-1 multiplexer                             : 13
  16-bit 2-to-1 multiplexer                             : 1
 
 =========================================================================
@@ -832,9 +826,8 @@ Macro Statistics
  5-bit comparator greater                              : 3
  6-bit comparator greater                              : 1
  6-bit comparator lessequal                            : 1
-# Multiplexers                                         : 74
+# Multiplexers                                         : 61
  1-bit 2-to-1 multiplexer                              : 60
- 12-bit 2-to-1 multiplexer                             : 13
  16-bit 2-to-1 multiplexer                             : 1
 
 =========================================================================
@@ -1175,6 +1168,18 @@ INFO:Xst:2261 - The FF/Latch <delay_27_21> in Unit <module_filtro_fir> is equiva
 INFO:Xst:2261 - The FF/Latch <delay_28_21> in Unit <module_filtro_fir> is equivalent to the following 6 FFs/Latches, which will be removed : <delay_28_22> <delay_28_23> <delay_28_24> <delay_28_25> <delay_28_26> <delay_28_27> 
 INFO:Xst:2261 - The FF/Latch <delay_29_21> in Unit <module_filtro_fir> is equivalent to the following 6 FFs/Latches, which will be removed : <delay_29_22> <delay_29_23> <delay_29_24> <delay_29_25> <delay_29_26> <delay_29_27> 
 INFO:Xst:2261 - The FF/Latch <delay_30_21> in Unit <module_filtro_fir> is equivalent to the following 6 FFs/Latches, which will be removed : <delay_30_22> <delay_30_23> <delay_30_24> <delay_30_25> <delay_30_26> <delay_30_27> 
+WARNING:Xst:2677 - Node <delay_30_10> of sequential type is unconnected in block <module_filtro_fir>.
+WARNING:Xst:2677 - Node <delay_30_11> of sequential type is unconnected in block <module_filtro_fir>.
+WARNING:Xst:2677 - Node <delay_30_12> of sequential type is unconnected in block <module_filtro_fir>.
+WARNING:Xst:2677 - Node <delay_30_13> of sequential type is unconnected in block <module_filtro_fir>.
+WARNING:Xst:2677 - Node <delay_30_14> of sequential type is unconnected in block <module_filtro_fir>.
+WARNING:Xst:2677 - Node <delay_30_15> of sequential type is unconnected in block <module_filtro_fir>.
+WARNING:Xst:2677 - Node <delay_30_16> of sequential type is unconnected in block <module_filtro_fir>.
+WARNING:Xst:2677 - Node <delay_30_17> of sequential type is unconnected in block <module_filtro_fir>.
+WARNING:Xst:2677 - Node <delay_30_18> of sequential type is unconnected in block <module_filtro_fir>.
+WARNING:Xst:2677 - Node <delay_30_19> of sequential type is unconnected in block <module_filtro_fir>.
+WARNING:Xst:2677 - Node <delay_30_20> of sequential type is unconnected in block <module_filtro_fir>.
+WARNING:Xst:2677 - Node <delay_30_21> of sequential type is unconnected in block <module_filtro_fir>.
 WARNING:Xst:1710 - FF/Latch <data_1> (without init value) has a constant value of 0 in block <module_DAC_ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_2> (without init value) has a constant value of 0 in block <module_DAC_ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_3> (without init value) has a constant value of 0 in block <module_DAC_ctrl>. This FF/Latch will be trimmed during the optimization process.
@@ -1202,7 +1207,7 @@ INFO:Xst:2261 - The FF/Latch <ADC/ini_ant> in Unit <module_Filtro_Master> is equ
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block module_Filtro_Master, actual ratio is 11.
+Found area constraint ratio of 100 (+ 5) on block module_Filtro_Master, actual ratio is 12.
 
 Final Macro Processing ...
 
@@ -1210,8 +1215,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 432
- Flip-Flops                                            : 432
+# Registers                                            : 420
+ Flip-Flops                                            : 420
 
 =========================================================================
 
@@ -1234,34 +1239,35 @@ Top Level Output File Name         : module_Filtro_Master.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1588
+# BELS                             : 1834
 #      GND                         : 1
-#      INV                         : 8
-#      LUT2                        : 236
-#      LUT3                        : 229
-#      LUT4                        : 228
-#      LUT5                        : 6
-#      LUT6                        : 20
-#      MUXCY                       : 428
+#      INV                         : 37
+#      LUT1                        : 3
+#      LUT2                        : 276
+#      LUT3                        : 230
+#      LUT4                        : 230
+#      LUT5                        : 10
+#      LUT6                        : 23
+#      MUXCY                       : 509
 #      VCC                         : 1
-#      XORCY                       : 431
-# FlipFlops/Latches                : 434
+#      XORCY                       : 514
+# FlipFlops/Latches                : 422
 #      FD                          : 20
-#      FDC                         : 372
+#      FDC                         : 360
 #      FDE                         : 24
 #      FDR                         : 6
 #      FDRE                        : 10
 #      ODDR2                       : 2
 # Clock Buffers                    : 3
 #      BUFG                        : 3
-# IO Buffers                       : 19
-#      IBUF                        : 4
+# IO Buffers                       : 17
+#      IBUF                        : 2
 #      IBUFG                       : 1
 #      OBUF                        : 14
 # DCMs                             : 1
 #      DCM_SP                      : 1
-# DSPs                             : 16
-#      DSP48A1                     : 16
+# DSPs                             : 11
+#      DSP48A1                     : 11
 
 Device utilization summary:
 ---------------------------
@@ -1270,24 +1276,24 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             434  out of  18224     2%  
- Number of Slice LUTs:                  727  out of   9112     7%  
-    Number used as Logic:               727  out of   9112     7%  
+ Number of Slice Registers:             422  out of  18224     2%  
+ Number of Slice LUTs:                  809  out of   9112     8%  
+    Number used as Logic:               809  out of   9112     8%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1016
-   Number with an unused Flip Flop:     582  out of   1016    57%  
-   Number with an unused LUT:           289  out of   1016    28%  
-   Number of fully used LUT-FF pairs:   145  out of   1016    14%  
+ Number of LUT Flip Flop pairs used:   1100
+   Number with an unused Flip Flop:     678  out of   1100    61%  
+   Number with an unused LUT:           291  out of   1100    26%  
+   Number of fully used LUT-FF pairs:   131  out of   1100    11%  
    Number of unique control sets:         7
 
 IO Utilization: 
- Number of IOs:                          19
- Number of bonded IOBs:                  19  out of    232     8%  
+ Number of IOs:                          17
+ Number of bonded IOBs:                  17  out of    232     7%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
- Number of DSP48A1s:                     16  out of     32    50%  
+ Number of DSP48A1s:                     11  out of     32    34%  
 
 ---------------------------
 Partition Resource Summary:
@@ -1311,7 +1317,7 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
 clk                                | DCM_SP:CLKFX           | 64    |
-div2/clkout                        | BUFG                   | 372   |
+div2/clkout                        | BUFG                   | 360   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -1323,7 +1329,7 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: 1.351ns (Maximum Frequency: 740.439MHz)
-   Minimum input arrival time before clock: 24.493ns
+   Minimum input arrival time before clock: 3.728ns
    Maximum output required time after clock: 3.634ns
    Maximum combinational path delay: No path found
 
@@ -1333,10 +1339,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 0.828ns (frequency: 1207.642MHz)
-  Total number of paths / destination ports: 516 / 109
+  Clock period: 0.827ns (frequency: 1209.629MHz)
+  Total number of paths / destination ports: 525 / 109
 -------------------------------------------------------------------------
-Delay:               4.140ns (Levels of Logic = 3)
+Delay:               4.134ns (Levels of Logic = 3)
   Source:            ADC/ini_ant (FF)
   Destination:       DAC/datb_11 (FF)
   Source Clock:      clk rising 0.2X
@@ -1346,19 +1352,19 @@ Delay:               4.140ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              10   0.447   0.961  ADC/ini_ant (ADC/ini_ant)
-     LUT2:I0->O           22   0.203   1.134  ADC/i_ini_ini_ant_AND_1_o1 (ADC/i_ini_ini_ant_AND_1_o)
+     FD:C->Q               9   0.447   0.934  ADC/ini_ant (ADC/ini_ant)
+     LUT2:I0->O           23   0.203   1.154  ADC/i_ini_ini_ant_AND_1_o1 (ADC/i_ini_ini_ant_AND_1_o)
      LUT6:I5->O           11   0.205   0.883  DAC/Mmux_datb[15]_GND_59_o_mux_8_OUT1021 (DAC/Mmux_datb[15]_GND_59_o_mux_8_OUT102)
      LUT6:I5->O            1   0.205   0.000  DAC/Mmux_datb[15]_GND_59_o_mux_8_OUT31 (DAC/datb[15]_GND_59_o_mux_8_OUT<11>)
      FD:D                      0.102          DAC/datb_11
     ----------------------------------------
-    Total                      4.140ns (1.162ns logic, 2.978ns route)
+    Total                      4.134ns (1.162ns logic, 2.972ns route)
                                        (28.1% logic, 71.9% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'div2/clkout'
   Clock period: 1.351ns (frequency: 740.439MHz)
-  Total number of paths / destination ports: 360 / 360
+  Total number of paths / destination ports: 348 / 348
 -------------------------------------------------------------------------
 Delay:               1.351ns (Levels of Logic = 0)
   Source:            Top_Desing_Filter/module_filtro_fir_inst/delay_15_21 (FF)
@@ -1378,91 +1384,41 @@ Delay:               1.351ns (Levels of Logic = 0)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'div2/clkout'
-  Total number of paths / destination ports: 372 / 372
+  Total number of paths / destination ports: 360 / 360
 -------------------------------------------------------------------------
-Offset:              3.729ns (Levels of Logic = 1)
+Offset:              3.728ns (Levels of Logic = 1)
   Source:            reset<0> (PAD)
-  Destination:       Top_Desing_Filter/module_filtro_fir_inst/delay_30_21 (FF)
+  Destination:       Top_Desing_Filter/module_filtro_fir_inst/delay_29_21 (FF)
   Destination Clock: div2/clkout rising
 
-  Data Path: reset<0> to Top_Desing_Filter/module_filtro_fir_inst/delay_30_21
+  Data Path: reset<0> to Top_Desing_Filter/module_filtro_fir_inst/delay_29_21
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           372   1.222   2.077  reset_0_IBUF (reset_0_IBUF)
+     IBUF:I->O           360   1.222   2.076  reset_0_IBUF (reset_0_IBUF)
      FDC:CLR                   0.430          Top_Desing_Filter/module_filtro_fir_inst/delay_0_10
     ----------------------------------------
-    Total                      3.729ns (1.652ns logic, 2.077ns route)
+    Total                      3.728ns (1.652ns logic, 2.076ns route)
                                        (44.3% logic, 55.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 1603479587125 / 13
+  Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              24.493ns (Levels of Logic = 51)
-  Source:            selec_filter<1> (PAD)
-  Destination:       DAC/datb_11 (FF)
+Offset:              1.903ns (Levels of Logic = 1)
+  Source:            JB8 (PAD)
+  Destination:       ADC/data_0 (FF)
   Destination Clock: clk rising 0.2X
 
-  Data Path: selec_filter<1> to DAC/datb_11
+  Data Path: JB8 to ADC/data_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            14   1.222   0.957  selec_filter_1_IBUF (selec_filter_1_IBUF)
-     INV:I->O             25   0.206   1.192  Top_Desing_Filter/module_filtro_fir_inst/coeb_impulrespon<0><10>1_INV_0 (Top_Desing_Filter/module_filtro_fir_inst/coeb_impulrespon<0><10>)
-     DSP48A1:A10->M1       2   2.835   0.845  Top_Desing_Filter/module_filtro_fir_inst/module_prod_inst/Mmult_result (Top_Desing_Filter/module_filtro_fir_inst/prod<0><0>)
-     LUT3:I0->O            1   0.205   0.580  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1)
-     LUT4:I3->O            1   0.205   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_lut<0>1 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_lut<0>1)
-     MUXCY:S->O            1   0.172   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_0 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>1)
-     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_1 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>2)
-     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_2 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>3)
-     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_3 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>4)
-     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_4 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>5)
-     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_5 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>6)
-     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_6 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>7)
-     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_7 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>8)
-     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_8 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>9)
-     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_9 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>10)
-     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_10 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>11)
-     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_11 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>12)
-     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_12 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>13)
-     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_13 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>14)
-     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_14 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>15)
-     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_15 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>16)
-     MUXCY:CI->O           1   0.019   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>_16 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_cy<0>17)
-     XORCY:CI->O           2   0.180   0.845  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1_xor<0>_17 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd_181)
-     LUT3:I0->O            1   0.205   0.580  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd318 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd318)
-     LUT4:I3->O            1   0.205   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd3_lut<0>19 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd3_lut<0>19)
-     MUXCY:S->O            1   0.172   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd3_cy<0>_18 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd3_cy<0>19)
-     XORCY:CI->O           2   0.180   0.845  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd3_xor<0>_19 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd_203)
-     LUT3:I0->O            1   0.205   0.580  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd520 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd520)
-     LUT4:I3->O            1   0.205   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd5_lut<0>21 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd5_lut<0>21)
-     MUXCY:S->O            1   0.172   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd5_cy<0>_20 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd5_cy<0>21)
-     XORCY:CI->O           2   0.180   0.845  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd5_xor<0>_21 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd_225)
-     LUT3:I0->O            1   0.205   0.580  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd722 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd722)
-     LUT4:I3->O            1   0.205   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd7_lut<0>23 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd7_lut<0>23)
-     MUXCY:S->O            1   0.172   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd7_cy<0>_22 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd7_cy<0>23)
-     XORCY:CI->O           2   0.180   0.845  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd7_xor<0>_23 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd_247)
-     LUT3:I0->O            1   0.205   0.580  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd924 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd924)
-     LUT4:I3->O            1   0.205   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd9_lut<0>25 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd9_lut<0>25)
-     MUXCY:S->O            1   0.172   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd9_cy<0>_24 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd9_cy<0>25)
-     XORCY:CI->O           2   0.180   0.845  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd9_xor<0>_25 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd_269)
-     LUT3:I0->O            1   0.205   0.580  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1135 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1136)
-     LUT4:I3->O            1   0.205   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd11_lut<0>27 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd11_lut<0>27)
-     MUXCY:S->O            1   0.172   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd11_cy<0>_26 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd11_cy<0>27)
-     XORCY:CI->O           2   0.180   0.845  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd11_xor<0>_27 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd_2811)
-     LUT3:I0->O            1   0.205   0.580  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1333 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd1330)
-     LUT4:I3->O            1   0.205   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd13_lut<0>29 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd13_lut<0>29)
-     MUXCY:S->O            1   0.172   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd13_cy<0>_28 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd13_cy<0>29)
-     XORCY:CI->O           1   0.180   0.684  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd13_xor<0>_29 (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd_3013)
-     LUT2:I0->O            1   0.203   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd14_lut<30> (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd14_lut<30>)
-     MUXCY:S->O            0   0.172   0.000  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd14_cy<30> (Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd14_cy<30>)
-     XORCY:CI->O           1   0.180   0.924  Top_Desing_Filter/module_filtro_fir_inst/ADDER_FOR_MULTADD_Madd14_xor<31> (Top_Desing_Filter/ca2bin<31>)
-     LUT6:I1->O            1   0.203   0.000  DAC/Mmux_datb[15]_GND_59_o_mux_8_OUT31 (DAC/datb[15]_GND_59_o_mux_8_OUT<11>)
-     FD:D                      0.102          DAC/datb_11
+     IBUF:I->O             1   1.222   0.579  JB8_IBUF (JB8_IBUF)
+     FDE:D                     0.102          ADC/data_0
     ----------------------------------------
-    Total                     24.493ns (10.761ns logic, 13.732ns route)
-                                       (43.9% logic, 56.1% route)
+    Total                      1.903ns (1.324ns logic, 0.579ns route)
+                                       (69.6% logic, 30.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -1493,8 +1449,8 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.140|         |         |         |
-div2/clkout    |   24.084|         |         |         |
+clk            |    4.134|         |         |         |
+div2/clkout    |   22.237|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock div2/clkout
@@ -1509,15 +1465,15 @@ div2/clkout    |    1.351|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 7.35 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.01 secs
  
 --> 
 
 
-Total memory usage is 525000 kilobytes
+Total memory usage is 515868 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  758 (   0 filtered)
+Number of warnings :  766 (   0 filtered)
 Number of infos    :   33 (   0 filtered)
 
