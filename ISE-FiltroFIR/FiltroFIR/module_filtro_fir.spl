@@ -1,8 +1,0 @@
-[Inputs]
-i_clock
-=i_signal_data[31:0]=
-=i_filter_selec[1:0]=
-=i_reset[0:0]=
-[Outputs]
-=o_signal_operation[31:0]=
-[BiDir]

@@ -1,8 +1,0 @@
-vhdtdtfi -lib work modulo_sum.vhd -lib work module_prod.vhd -lib work module_filtro_fir.vhd -prj FiltroFIR -o module_filtro_fir.spl -module module_filtro_fir -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
-spl2sym -intstyle ise -family spartan6 module_filtro_fir.spl /home/ise/ISE-FiltroFIR/FiltroFIR/module_filtro_fir.sym 
-vhdtdtfi -lib work modulo_sum.vhd -lib work module_prod.vhd -lib work module_filtro_fir.vhd -prj FiltroFIR -o module_filtro_fir.spl -module module_filtro_fir -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
-spl2sym -intstyle ise -family spartan6 module_filtro_fir.spl /home/ise/ISE-FiltroFIR/FiltroFIR/module_filtro_fir.sym 
-vhdtdtfi -lib work modulo_sum.vhd -lib work module_prod.vhd -lib work module_filtro_fir.vhd -prj FiltroFIR -o module_filtro_fir.spl -module module_filtro_fir -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
-spl2sym -intstyle ise -family spartan6 module_filtro_fir.spl /home/ise/ISE-FiltroFIR/FiltroFIR/module_filtro_fir.sym 
-vhdtdtfi -lib work modulo_sum.vhd -lib work module_prod.vhd -lib work module_filtro_fir.vhd -prj FiltroFIR -o module_filtro_fir.spl -module module_filtro_fir -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
-spl2sym -intstyle ise -family spartan6 module_filtro_fir.spl /home/ise/ISE-FiltroFIR/FiltroFIR/module_filtro_fir.sym 
