@@ -174,8 +174,8 @@ begin
 	
 	Top_Desing_Filter : top_desing
 		generic map(
-    	    selector_sample =>  31     	,                               -- Ancho de datos por defecto (31 o 29)
-    	    selector_coe    =>  16                                      -- Elegir entre 16 coeficientes(15 iguales) 
+    	    selector_sample =>  29     	,                               -- Ancho de datos por defecto (31 o 29)
+    	    selector_coe    =>  15                                      -- Elegir entre 16 coeficientes(15 iguales) 
                                                                         -- ó 15 coeficientes (14 iguales)
     	)
     	Port map(

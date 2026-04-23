@@ -24,8 +24,8 @@ use ieee.NUMERIC_STD        .all    ;
 
 entity top_desing is  
     generic (
-        selector_sample     : integer := 31     ;                               -- Ancho de datos por defecto (31 o 29)
-        selector_coe        : integer := 16                                     -- Elegir entre 16 coeficientes(15 iguales) 
+        selector_sample     : integer   ;                               -- Ancho de datos por defecto (31 o 29)
+        selector_coe        : integer                                     -- Elegir entre 16 coeficientes(15 iguales) 
                                                                                 -- ó 15 coeficientes (14 iguales)
     );
     port (
