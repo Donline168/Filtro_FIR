@@ -14,12 +14,12 @@ entity module_filtro_fir is
         i_coe_selec         :   integer
     );
     port (
-        i_signal_data       :   in  signed      (31 downto 0)   ;
-        i_clock             :   in  std_logic                   ;
-        i_filter_selec      :   in  signed      (1  downto 0 )  ;
-        i_reset             :   in  signed      (0  downto 0 )  ;
+        i_signal_data       :   in  signed          (31 downto 0)   ;
+        i_clock             :   in  std_logic                       ;
+        i_filter_selec      :   in  std_logic_vector(1  downto 0)  ;
+        i_reset             :   in  signed          (0  downto 0)  ;
     
-        o_signal_operation  :   out signed      (31 downto 0)   
+        o_signal_operation  :   out signed          (31 downto 0)   
     );
 end module_filtro_fir;
 
@@ -35,11 +35,11 @@ architecture Comportamient_fir of module_filtro_fir is
   
     type    prod_matriz                     is  array(i_coe_selec-1 downto 0)      of  signed(31 downto 0)  ;
 
---    type    coeb_impulrespon_rect_matriz    is  array(15 downto 0)                 of  signed(11 downto 0)  ;
+   type    coeb_impulrespon_rect_matriz    is  array(15 downto 0)                 of  signed(11 downto 0)  ;
 
     type    coeb_impulrespon_hamm_matriz    is  array(15 downto 0)                 of  signed(11 downto 0)  ;
 
-    -- type    coeb_impulrespon_barl_matriz    is  array(15 downto 0)                 of  signed(11 downto 0)  ;
+    type    coeb_impulrespon_barl_matriz    is  array(15 downto 0)                 of  signed(11 downto 0)  ;
 
     type    suma_matriz                     is  array(i_coe_selec-2 downto 0)      of  signed(31 downto 0)  ;
 
@@ -47,11 +47,11 @@ architecture Comportamient_fir of module_filtro_fir is
 
 --  Declaracion de las señales matriciales
 
-    -- signal  coeb_impulrespon_rect   : coeb_impulrespon_rect_matriz  := (others => (others => '0'))  ;
+    signal  coeb_impulrespon_rect   : coeb_impulrespon_rect_matriz  := (others => (others => '0'))  ;
 
     signal  coeb_impulrespon_hamm   : coeb_impulrespon_hamm_matriz  := (others => (others => '0'))  ;
 
-    -- signal  coeb_impulrespon_barl   : coeb_impulrespon_barl_matriz  := (others => (others => '0'))  ;
+    signal  coeb_impulrespon_barl   : coeb_impulrespon_barl_matriz  := (others => (others => '0'))  ;
 
     signal  coeb_impulrespon        : coeb_impulrespon_matriz       := (others => (others => '0'))  ;     
 
@@ -93,95 +93,81 @@ begin
 
 --  RECTANGULAR
 
-    -- coeb_impulrespon_rect(0)    <=  "111111100110"  ; -- - 0,0127
-    -- coeb_impulrespon_rect(1)    <=  "111111011001"  ; -- - 0,0190
-    -- coeb_impulrespon_rect(2)    <=  "111111001111"  ; -- - 0,0239
-    -- coeb_impulrespon_rect(3)    <=  "111111001011"  ; -- - 0,0259
-    -- coeb_impulrespon_rect(4)    <=  "111111001110"  ; -- - 0,0244
-    -- coeb_impulrespon_rect(5)    <=  "111111011010"  ; -- - 0,0186
-    -- coeb_impulrespon_rect(6)    <=  "111111101110"  ; -- - 0,0088
-    -- coeb_impulrespon_rect(7)    <=  "000000001010"  ; --   0,0049
-    -- coeb_impulrespon_rect(8)    <=  "000000101101"  ; --   0,0220
-    -- coeb_impulrespon_rect(9)    <=  "000001010100"  ; --   0,0410
-    -- coeb_impulrespon_rect(10)   <=  "000001111100"  ; --   0,0605
-    -- coeb_impulrespon_rect(11)   <=  "000010100011"  ; --   0,0746
-    -- coeb_impulrespon_rect(12)   <=  "000011000101"  ; --   0,0962
-    -- coeb_impulrespon_rect(13)   <=  "000011011111"  ; --   0,1089
-    -- coeb_impulrespon_rect(14)   <=  "000011110000"  ; --   0,1172
-    -- coeb_impulrespon_rect(15)   <=  "000011110110"  ; --   0,12
+    coeb_impulrespon_rect(0)    <=  "111111100110"  ; -- - 0,0127
+    coeb_impulrespon_rect(1)    <=  "111111011001"  ; -- - 0,0190
+    coeb_impulrespon_rect(2)    <=  "111111001111"  ; -- - 0,0239
+    coeb_impulrespon_rect(3)    <=  "111111001011"  ; -- - 0,0259
+    coeb_impulrespon_rect(4)    <=  "111111001110"  ; -- - 0,0244
+    coeb_impulrespon_rect(5)    <=  "111111011010"  ; -- - 0,0186
+    coeb_impulrespon_rect(6)    <=  "111111101110"  ; -- - 0,0088
+    coeb_impulrespon_rect(7)    <=  "000000001010"  ; --   0,0049
+    coeb_impulrespon_rect(8)    <=  "000000101101"  ; --   0,0220
+    coeb_impulrespon_rect(9)    <=  "000001010100"  ; --   0,0410
+    coeb_impulrespon_rect(10)   <=  "000001111100"  ; --   0,0605
+    coeb_impulrespon_rect(11)   <=  "000010100011"  ; --   0,0746
+    coeb_impulrespon_rect(12)   <=  "000011000101"  ; --   0,0962
+    coeb_impulrespon_rect(13)   <=  "000011011111"  ; --   0,1089
+    coeb_impulrespon_rect(14)   <=  "000011110000"  ; --   0,1172
+    coeb_impulrespon_rect(15)   <=  "000011110110"  ; --   0,12
 
 --  HAMMING
 
-    coeb_impulrespon_hamm(15)   <=  "111111111110"  ; -- - 0,000997   
-    coeb_impulrespon_hamm(14)   <=  "111111111101"  ; -- - 0,00172
-    coeb_impulrespon_hamm(13)   <=  "111111111011"  ; -- - 0,00287
-    coeb_impulrespon_hamm(12)   <=  "111111111001"  ; -- - 0,00436
-    coeb_impulrespon_hamm(11)   <=  "111111110111"  ; -- - 0,00566
-    coeb_impulrespon_hamm(10)   <=  "111111110110"  ; -- - 0,00579
-    coeb_impulrespon_hamm(9)    <=  "111111111010"  ; -- - 0,00349
-    coeb_impulrespon_hamm(8)    <=  "000000000100"  ; --   0,00245
-    coeb_impulrespon_hamm(7)    <=  "000000011000"  ; --   0,01287
-    coeb_impulrespon_hamm(6)    <=  "000000110110"  ; --   0,02786
-    coeb_impulrespon_hamm(5)    <=  "000001011100"  ; --   0,04658
-    coeb_impulrespon_hamm(4)    <=  "000010000110"  ; --   0,06727
-    coeb_impulrespon_hamm(3)    <=  "000010110001"  ; --   0,08749
-    coeb_impulrespon_hamm(2)    <=  "000011010101"  ; --   0,10453
-    coeb_impulrespon_hamm(1)    <=  "000011101101"  ; --   0,11590
-    coeb_impulrespon_hamm(0)    <=  "000011110110"  ; --   0,12
+    coeb_impulrespon_hamm(0)    <=  "111111111110"  ; -- - 0,000997   
+    coeb_impulrespon_hamm(1)    <=  "111111111101"  ; -- - 0,00172
+    coeb_impulrespon_hamm(2)    <=  "111111111011"  ; -- - 0,00287
+    coeb_impulrespon_hamm(3)    <=  "111111111001"  ; -- - 0,00436
+    coeb_impulrespon_hamm(4)    <=  "111111110111"  ; -- - 0,00566
+    coeb_impulrespon_hamm(5)    <=  "111111110110"  ; -- - 0,00579
+    coeb_impulrespon_hamm(6)    <=  "111111111010"  ; -- - 0,00349
+    coeb_impulrespon_hamm(7)    <=  "000000000100"  ; --   0,00245
+    coeb_impulrespon_hamm(8)    <=  "000000011000"  ; --   0,01287
+    coeb_impulrespon_hamm(9)    <=  "000000110110"  ; --   0,02786
+    coeb_impulrespon_hamm(10)   <=  "000001011100"  ; --   0,04658
+    coeb_impulrespon_hamm(11)   <=  "000010000110"  ; --   0,06727
+    coeb_impulrespon_hamm(12)   <=  "000010110001"  ; --   0,08749
+    coeb_impulrespon_hamm(13)   <=  "000011010101"  ; --   0,10453
+    coeb_impulrespon_hamm(14)   <=  "000011101101"  ; --   0,11590
+    coeb_impulrespon_hamm(15)   <=  "000011110110"  ; --   0,12
 
 --  BARLETT
 
-    -- coeb_impulrespon_barl(0)    <=  "000000000000"  ; --   0
-    -- coeb_impulrespon_barl(1)    <=  "111111111101"  ; -- - 0,0015
-    -- coeb_impulrespon_barl(2)    <=  "111111111001"  ; -- - 0,0034
-    -- coeb_impulrespon_barl(3)    <=  "111111110101"  ; -- - 0,0054
-    -- coeb_impulrespon_barl(4)    <=  "111111110011"  ; -- - 0,0063
-    -- coeb_impulrespon_barl(5)    <=  "111111110011"  ; -- - 0,0063
-    -- coeb_impulrespon_barl(6)    <=  "111111111001"  ; -- - 0,0034
-    -- coeb_impulrespon_barl(7)    <=  "000000000101"  ; --   0,0024
-    -- coeb_impulrespon_barl(8)    <=  "000000011000"  ; --   0,0117
-    -- coeb_impulrespon_barl(9)    <=  "000000110010"  ; --   0,0244
-    -- coeb_impulrespon_barl(10)   <=  "000001010011"  ; --   0,0405
-    -- coeb_impulrespon_barl(11)   <=  "000001110111"  ; --   0,0581
-    -- coeb_impulrespon_barl(12)   <=  "000010011101"  ; --   0,0767
-    -- coeb_impulrespon_barl(13)   <=  "000011000001"  ; --   0,0942
-    -- coeb_impulrespon_barl(14)   <=  "000011100000"  ; --   0,1094
-    -- coeb_impulrespon_barl(15)   <=  "000011110110"  ; --   0,12
+    coeb_impulrespon_barl(0)    <=  "000000000000"  ; --   0
+    coeb_impulrespon_barl(1)    <=  "111111111101"  ; -- - 0,0015
+    coeb_impulrespon_barl(2)    <=  "111111111001"  ; -- - 0,0034
+    coeb_impulrespon_barl(3)    <=  "111111110101"  ; -- - 0,0054
+    coeb_impulrespon_barl(4)    <=  "111111110011"  ; -- - 0,0063
+    coeb_impulrespon_barl(5)    <=  "111111110011"  ; -- - 0,0063
+    coeb_impulrespon_barl(6)    <=  "111111111001"  ; -- - 0,0034
+    coeb_impulrespon_barl(7)    <=  "000000000101"  ; --   0,0024
+    coeb_impulrespon_barl(8)    <=  "000000011000"  ; --   0,0117
+    coeb_impulrespon_barl(9)    <=  "000000110010"  ; --   0,0244
+    coeb_impulrespon_barl(10)   <=  "000001010011"  ; --   0,0405
+    coeb_impulrespon_barl(11)   <=  "000001110111"  ; --   0,0581
+    coeb_impulrespon_barl(12)   <=  "000010011101"  ; --   0,0767
+    coeb_impulrespon_barl(13)   <=  "000011000001"  ; --   0,0942
+    coeb_impulrespon_barl(14)   <=  "000011100000"  ; --   0,1094
+    coeb_impulrespon_barl(15)   <=  "000011110110"  ; --   0,12
 
 -------------------------------------------------------------------------
 --  Seleccion de Coeficientes mediente la señal i_filter_selec
 
-    -- process (i_filter_selec)
-    -- begin
+    process (i_filter_selec)
+    begin
+       for i_b in 0 to i_coe_selec-1 loop
 
-    --    for i_b in 0 to i_coe_selec-1 loop
+            case i_filter_selec is
+                when "01"   =>
+                    coeb_impulrespon(i_coe_selec - 1 - i_b) <=  coeb_impulrespon_rect(i_b)   ;
+                when "10"   =>
+                    coeb_impulrespon(i_coe_selec - 1 - i_b) <=  coeb_impulrespon_hamm(i_b)   ;
+                when "11"   =>
+                    coeb_impulrespon(i_coe_selec - 1 - i_b) <=  coeb_impulrespon_barl(i_b)   ;
+                when others =>
+                    coeb_impulrespon(i_coe_selec - 1 - i_b) <=  (others => '0')              ;
+            end case;
 
-    --             if i_filter_selec = 00 then
-
-    --                 coeb_impulrespon(i_coe_selec - 1 - i_b) <= coeb_impulrespon_rect(15 - i_b)  ;
-
-    --             elsif i_filter_selec = 01 then 
-
-    --                 coeb_impulrespon(i_coe_selec - 1 - i_b) <= coeb_impulrespon_hamm(15 - i_b)  ;
-
-    --             else
-
-    --                 coeb_impulrespon(i_coe_selec - 1 - i_b) <= coeb_impulrespon_barl(15 - i_b)  ;
-
-    --             end if;
-
-    --         end loop; 
- 
-    -- end process;
-
-    iter_coe : for i_b in 0 to i_coe_selec-1 generate
-
-  
-                    coeb_impulrespon(i_coe_selec - 1 - i_b) <= coeb_impulrespon_hamm(i_b)  ;
-
-
-    end generate; 
-
+        end loop; 
+    end process;
 
 
 -------------------------------------------------------------------------

@@ -24,9 +24,8 @@ use ieee.NUMERIC_STD        .all    ;
 
 entity top_desing is  
     generic (
-        selector_sample     : integer   ;                               -- Ancho de datos por defecto (31 o 29)
-        selector_coe        : integer                                     -- Elegir entre 16 coeficientes(15 iguales) 
-                                                                                -- ó 15 coeficientes (14 iguales)
+        i_selector_sample     : integer   ;                               
+        i_selector_coe        : integer                                                                                       
     );
     port (
         i_signal_adc        :   in  std_logic_vector  (11 downto 0)   ;         -- Señal de muestreo en 12 bits
@@ -46,11 +45,9 @@ architecture Comportamient_top of top_desing is
 
 --  Definicion de las señales internas
 
-
 signal  binca2          :   signed  (31 downto 0)   :=  (others => '0') ;
 signal  ca2bin          :   signed  (31 downto 0)   :=  (others => '0') ;  
 
-signal  filter_selec    :   signed  (1  downto 0)  :=  (others => '0') ;
 signal  signal_adc      :   signed  (11 downto 0)   :=  (others => '0') ;
 
 signal  signal_filter   :   signed  (11 downto 0)   :=  (others => '0') ;
@@ -75,12 +72,12 @@ component module_filtro_fir is
         i_coe_selec         :   integer
     );
     port (
-        i_signal_data       :   in  signed      (31 downto 0)   ;               -- Señal del ADC al filtro
+        i_signal_data       :   in  signed              (31 downto 0)   ;               -- Señal del ADC al filtro
         i_clock             :   in  std_logic                           ;           -- Señal del clock
-        i_reset             :   in  signed      (0  downto 0)   ;
-        i_filter_selec      :   in  signed      (1  downto 0)   ;
+        i_reset             :   in  signed              (0  downto 0)   ;
+        i_filter_selec      :   in  std_logic_vector    (1  downto 0)   ;
         
-        o_signal_operation  :   out signed      (31 downto 0)                   -- Señal salida del filtro de 32 bits
+        o_signal_operation  :   out signed              (31 downto 0)                   -- Señal salida del filtro de 32 bits
         );
 end component   ;
 
@@ -98,7 +95,6 @@ end component;
 
 begin
 
-    filter_selec    <= signed  (i_filter_selec )        ;
     signal_adc      <= signed  (i_signal_adc   )        ;
 
     module_BinCa2_inst: module_BinCa2
@@ -112,8 +108,8 @@ begin
 
     module_filtro_fir_inst : module_filtro_fir
         generic map(
-            i_sample_selec      =>  selector_sample         ,
-            i_coe_selec         =>  selector_coe
+            i_sample_selec      =>  i_selector_sample       ,
+            i_coe_selec         =>  i_selector_coe
         )
         port map   (
 
@@ -121,7 +117,7 @@ begin
 
             i_clock             =>  i_clock                 ,
             i_reset             =>  reset                   ,
-            i_filter_selec      =>  filter_selec            ,
+            i_filter_selec      =>  i_filter_selec          ,
 
             o_signal_operation  =>  ca2bin
         );

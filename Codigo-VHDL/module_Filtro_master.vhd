@@ -15,8 +15,11 @@ library UNISIM;
 use UNISIM.VComponents.all;
 ------------------------------------------------------------
 -- Definicion de las entradas
-
 entity module_Filtro_Master is
+	generic (
+		selector_sample : integer := 31	;						-- Ancho de datos por defecto (31 o 29)
+    	selector_coe    : integer := 16  						-- Elegir entre 16 coeficientes(15 iguales) ó 15 coeficientes (14 iguales)
+	);
 	port ( 
 
 		clk				: 	in	std_logic						;
@@ -112,8 +115,8 @@ end component;
 -- Modulo Top_Desing
 component top_desing is
     generic (
-        selector_sample : integer := 31     ;                       	-- Ancho de datos por defecto (31 o 29)
-        selector_coe    : integer := 16                             	-- Elegir entre 16 coeficientes(15 iguales) 
+        i_selector_sample : integer     ;                       	-- Ancho de datos por defecto (31 o 29)
+        i_selector_coe    : integer                             	-- Elegir entre 16 coeficientes(15 iguales) 
                                                                     	-- ó 15 coeficientes (14 iguales)
     );
     port (
@@ -174,8 +177,8 @@ begin
 	
 	Top_Desing_Filter : top_desing
 		generic map(
-    	    selector_sample =>  29     	,                               -- Ancho de datos por defecto (31 o 29)
-    	    selector_coe    =>  15                                      -- Elegir entre 16 coeficientes(15 iguales) 
+    	    i_selector_sample =>	selector_sample     	,                               -- Ancho de datos por defecto (31 o 29)
+    	    i_selector_coe    =>	selector_coe                                      -- Elegir entre 16 coeficientes(15 iguales) 
                                                                         -- ó 15 coeficientes (14 iguales)
     	)
     	Port map(
